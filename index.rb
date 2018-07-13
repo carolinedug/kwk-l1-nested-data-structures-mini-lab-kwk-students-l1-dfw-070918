@@ -6,14 +6,14 @@ ingredients = [
     ["mayo", "mustard", "tabasco"]
 ]
 
-def sandwich_request(ingredients, order) 
+def sandwich_request(ingredients, order)
   order.each do |want|
     found = ingredients.find do |arr|
-    arr.find {|have| want == have}
+      arr.find {|have| want == have}
+    end
+    return false if !found
   end
-  return false if !found
-  end
-  true 
+  true
 end
 
 # example city_info hash
